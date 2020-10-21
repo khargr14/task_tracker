@@ -1,0 +1,9 @@
+<h1>All Tasks</h1>
+<% @tasks.each do |task|%>
+  <strong><a href="/tasks/<%=task.id %>"><%= task.title %></a></strong>
+  <!-- <h5><%= task.created_at %></h5> -->
+  <h5>Description:<%= task.description%></h5>
+  <h5>Due Date:<%=task.due_date%></h5>
+   <h5> By:<%= task.user.name %> </h5>
+  <br></br>
+  <% end %>

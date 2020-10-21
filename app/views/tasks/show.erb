@@ -1,0 +1,12 @@
+<p><b>Title:</b> <u><%= @task.title %></u></h3></p>
+<p><b>Description:</b><pre><%= @task.description%></pre></p>
+<p><b>Due Date: </b><%= @task.due_date%></p>
+
+<% if authorized_to_edit?(@task) %>
+<a href="/tasks/<%= @task.id %>/edit">Edit Task</a>
+<br></br>
+<form class ="" action ="/tasks/<%= @task.id %>" method ="post">
+  <input type ="hidden" name ="_method" value="DELETE">
+  <input type ="submit" name ="" value ="Delete Task">
+</form>
+<% end %>
